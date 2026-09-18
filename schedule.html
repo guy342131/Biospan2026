@@ -33,20 +33,40 @@
   .session-label.s-neuro { background: #8b5cf6; }
   .session-label.s-immuno { background: #0ea5e9; }
   .session-label.s-advances { background: #fb5f43; }
-  table.sched { width: 100%; border-collapse: collapse; }
+  
+  /* Strictly Aligned Schedule Table */
+  table.sched { 
+    width: 100%; 
+    border-collapse: collapse; 
+    table-layout: fixed; 
+  }
   table.sched tr { border-bottom: 1px solid var(--line); }
   table.sched tr:last-child { border-bottom: none; }
   table.sched td { padding: 14px 12px; vertical-align: top; }
-  table.sched td.time { font-family: var(--font-mono); font-size: 0.86rem; color: var(--helix-dark); white-space: nowrap; width: 130px; }
-  table.sched td.name { font-weight: 600; width: 220px; }
-  table.sched td.details { color: var(--slate); font-size: 0.92rem; }
+  
+  table.sched td.time { 
+    font-family: var(--font-mono); 
+    font-size: 0.86rem; 
+    color: var(--helix-dark); 
+    white-space: nowrap; 
+    width: 180px; 
+  }
+  table.sched td.name { 
+    font-weight: 600; 
+    width: 200px; 
+  }
+  table.sched td.details { 
+    color: var(--slate); 
+    font-size: 0.92rem; 
+  }
   .plain-row td.name { font-weight: 400; color: var(--ink-soft); }
 
   @media (max-width: 700px) {
     table.sched, table.sched tbody, table.sched tr, table.sched td { display: block; width: auto; }
     table.sched tr { padding: 12px 0; }
     table.sched td { padding: 2px 0; }
-    table.sched td.time { color: var(--helix-dark); font-weight: 600; }
+    table.sched td.time { color: var(--helix-dark); font-weight: 600; width: auto; }
+    table.sched td.name { width: auto; }
   }
 </style>
 </head>
@@ -105,8 +125,24 @@
     <div class="day-panel active" id="day1">
       <div class="session-block">
         <table class="sched">
-          <tr><td class="time">2:00 - 2:30 PM</td><td class="name">Inauguration and Welcome Address</td><td class="details">Prof. Rajiv Prakash, Director, IIT Bhilai · Prof. Santosh Biswas, Dean R&amp;D, IIT Bhilai</td></tr>
-          <tr><td class="time">2:30 - 3:15 PM</td><td class="name">Keynote Lecture 1</td><td class="details">Prof. Partha Pratim Majumder · Founding Director, NIBMG Kalyani</td></tr>
+          <tr>
+            <td class="time">2:00 - 2:30 PM</td>
+            <td class="name">Inauguration and Welcome Address</td>
+            <td class="details">
+              <strong>Prof. Rajiv Prakash</strong><br>
+              Director, IIT Bhilai<br><br>
+              <strong>Prof. Santosh Biswas</strong><br>
+              Dean R&amp;D, IIT Bhilai
+            </td>
+          </tr>
+          <tr>
+            <td class="time">2:30 - 3:15 PM</td>
+            <td class="name">Keynote Lecture 1</td>
+            <td class="details">
+              <strong>Prof. Partha Pratim Majumder</strong><br>
+              Founding Director, NIBMG Kalyani
+            </td>
+          </tr>
         </table>
       </div>
       <div class="session-block">
@@ -122,7 +158,7 @@
             </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Invited Talk 2</td>
             <td class="details">
               <strong>Dr. Niraj Rai</strong><br>
@@ -130,29 +166,53 @@
               <em>Title: Ancient DNA and the Genetic Mosaic of South Asia</em>
             </td>
           </tr>
-          <tr><td class="time">4:15 - 4:30 PM</td><td class="name">Tea Break</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">4:15 - 4:30 PM</td>
+            <td class="name">Tea Break</td>
+            <td class="details">-</td>
+          </tr>
           <tr>
             <td class="time">4:30 - 5:30 PM</td>
             <td class="name">Spotlight Talk 1</td>
-            <td class="details"><strong>Dr. Sourav Banerjee</strong><br>SRMIST</td>
+            <td class="details">
+              <strong>Dr. Sourav Banerjee</strong><br>
+              SRMIST
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 2</td>
-            <td class="details"><strong>Dr. Lekh Raj</strong><br>CURAJ</td>
+            <td class="details">
+              <strong>Dr. Lekh Raj</strong><br>
+              CURAJ
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 3</td>
-            <td class="details"><strong>Dr. Swati Singh</strong><br>IIT Ropar</td>
+            <td class="details">
+              <strong>Dr. Swati Singh</strong><br>
+              IIT Ropar
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 4</td>
-            <td class="details"><strong>Dr. Arup Dutta</strong><br>IIT Guwahati</td>
+            <td class="details">
+              <strong>Dr. Arup Dutta</strong><br>
+              IIT Guwahati
+            </td>
           </tr>
-          <tr><td class="time">5:30 - 7:30 PM</td><td class="name">Poster Session I</td><td class="details">-</td></tr>
-          <tr><td class="time">7:30 - 9:30 PM</td><td class="name">Dinner</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">5:30 - 7:30 PM</td>
+            <td class="name">Poster Session I</td>
+            <td class="details">-</td>
+          </tr>
+          <tr>
+            <td class="time">7:30 - 9:30 PM</td>
+            <td class="name">Dinner</td>
+            <td class="details">-</td>
+          </tr>
         </table>
       </div>
     </div>
@@ -161,7 +221,11 @@
     <div class="day-panel" id="day2">
       <div class="session-block">
         <table class="sched">
-          <tr><td class="time">7:30 - 9:30 AM</td><td class="name">Breakfast</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">7:30 - 9:30 AM</td>
+            <td class="name">Breakfast</td>
+            <td class="details">-</td>
+          </tr>
         </table>
       </div>
       <div class="session-block">
@@ -177,7 +241,7 @@
             </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Invited Talk 2</td>
             <td class="details">
               <strong>Dr. Indrajit Sahu</strong><br>
@@ -188,32 +252,63 @@
           <tr>
             <td class="time">10:30 - 11:15 AM</td>
             <td class="name">Spotlight Talk 1</td>
-            <td class="details"><strong>Dr. Sarita Puri</strong><br>IISER Pune</td>
+            <td class="details">
+              <strong>Dr. Sarita Puri</strong><br>
+              IISER Pune
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 2</td>
-            <td class="details"><strong>Dr. Shruti Gupta</strong><br>IIT Bhilai</td>
+            <td class="details">
+              <strong>Dr. Shruti Gupta</strong><br>
+              IIT Bhilai
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 3</td>
-            <td class="details"><strong>Dr. Bikash Kumar</strong><br>Amity University, CG</td>
+            <td class="details">
+              <strong>Dr. Bikash Kumar</strong><br>
+              Amity University, CG
+            </td>
           </tr>
-          <tr><td class="time">11:15 - 11:30 AM</td><td class="name">Tea Break</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">11:15 - 11:30 AM</td>
+            <td class="name">Tea Break</td>
+            <td class="details">-</td>
+          </tr>
           <tr>
             <td class="time">11:30 AM - 12:00 PM</td>
             <td class="name">Spotlight Talk 4</td>
-            <td class="details"><strong>Dr. Manishekhar Kumar</strong><br>NIT Raipur</td>
+            <td class="details">
+              <strong>Dr. Manishekhar Kumar</strong><br>
+              NIT Raipur
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 5</td>
-            <td class="details"><strong>Dr. Sushma Chauhan</strong><br>Amity University, CG</td>
+            <td class="details">
+              <strong>Dr. Sushma Chauhan</strong><br>
+              Amity University, CG
+            </td>
           </tr>
-          <tr><td class="time">12:00 - 12:30 PM</td><td class="name">Young Investigators’ Talks I</td><td class="details">PhDs and Postdocs</td></tr>
-          <tr><td class="time">12:30 - 1:00 PM</td><td class="name">Industrial Talk</td><td class="details">To be announced</td></tr>
-          <tr><td class="time">1:00 - 3:00 PM</td><td class="name">Poster Session II and Lunch</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">12:00 - 12:30 PM</td>
+            <td class="name">Young Investigators’ Talks I</td>
+            <td class="details">PhDs and Postdocs</td>
+          </tr>
+          <tr>
+            <td class="time">12:30 - 1:00 PM</td>
+            <td class="name">Industrial Talk</td>
+            <td class="details">To be announced</td>
+          </tr>
+          <tr>
+            <td class="time">1:00 - 3:00 PM</td>
+            <td class="name">Poster Session II and Lunch</td>
+            <td class="details">-</td>
+          </tr>
         </table>
       </div>
       <div class="session-block">
@@ -229,7 +324,7 @@
             </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Invited Talk 2</td>
             <td class="details">
               <strong>Dr. Garima Rani</strong><br>
@@ -238,7 +333,7 @@
             </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Invited Talk 3</td>
             <td class="details">
               <strong>Dr. Pugazhenthan T.</strong><br>
@@ -246,7 +341,11 @@
               <em>Title: Pharmacovigilance in the Era of Precision Medicine: From Biological Signals to Predictive Drug Safety</em>
             </td>
           </tr>
-          <tr><td class="time">4:30 - 4:45 PM</td><td class="name">Tea Break</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">4:30 - 4:45 PM</td>
+            <td class="name">Tea Break</td>
+            <td class="details">-</td>
+          </tr>
           <tr>
             <td class="time">4:45 - 5:45 PM</td>
             <td class="name">Invited Talk 4</td>
@@ -257,7 +356,7 @@
             </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Invited Talk 5</td>
             <td class="details">
               <strong>Dr. Dablu Lal Gupta</strong><br>
@@ -265,17 +364,25 @@
               <em>Title: The Double-Edged Sword of Sepsis: Combating Immune Hyper-inflammation and Paralysis with Targeted Therapies</em>
             </td>
           </tr>
-          <tr><td class="time">5:45 - 6:15 PM</td><td class="name">Young Investigators’ Talks II</td><td class="details">PhDs and Postdocs</td></tr>
+          <tr>
+            <td class="time">5:45 - 6:15 PM</td>
+            <td class="name">Young Investigators’ Talks II</td>
+            <td class="details">PhDs and Postdocs</td>
+          </tr>
           <tr>
             <td class="time">6:15 - 7:00 PM</td>
             <td class="name">Keynote Lecture 2</td>
             <td class="details">
               <strong>Prof. L. S. Shashidhara</strong><br>
-              NCBS, Bengaluru<br>
+              Director, NCBS, Bengaluru<br>
               <em>Title: From the origin of Life to Evolution of Self</em>
             </td>
           </tr>
-          <tr><td class="time">7:30 - 9:30 PM</td><td class="name">Dinner</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">7:30 - 9:30 PM</td>
+            <td class="name">Dinner</td>
+            <td class="details">-</td>
+          </tr>
         </table>
       </div>
     </div>
@@ -284,13 +391,17 @@
     <div class="day-panel" id="day3">
       <div class="session-block">
         <table class="sched">
-          <tr><td class="time">7:30 - 9:00 AM</td><td class="name">Breakfast</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">7:30 - 9:00 AM</td>
+            <td class="name">Breakfast</td>
+            <td class="details">-</td>
+          </tr>
           <tr>
             <td class="time">9:00 - 9:45 AM</td>
             <td class="name">Keynote Lecture 3</td>
             <td class="details">
               <strong>Prof. Ritu Trivedi</strong><br>
-              CDRI, Lucknow
+              Chief Scientist &amp; Head, Endocrinology Division, CDRI, Lucknow
             </td>
           </tr>
         </table>
@@ -308,7 +419,7 @@
             </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Invited Talk 2</td>
             <td class="details">
               <strong>Dr. Balkrishna Chaturvedi</strong><br>
@@ -316,29 +427,53 @@
               <em>Title: Endothelial Metabolic Reprogramming in Cardiometabolic Disease: Linking Lipid Metabolism, Inflammation, and Vascular Dysfunction</em>
             </td>
           </tr>
-          <tr><td class="time">10:45 - 11:00 AM</td><td class="name">Tea Break</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">10:45 - 11:00 AM</td>
+            <td class="name">Tea Break</td>
+            <td class="details">-</td>
+          </tr>
           <tr>
             <td class="time">11:00 AM - 12:00 PM</td>
             <td class="name">Spotlight Talk 1</td>
-            <td class="details"><strong>Dr. Divya Singh</strong><br>BIT Durg</td>
+            <td class="details">
+              <strong>Dr. Divya Singh</strong><br>
+              BIT Durg
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 2</td>
-            <td class="details"><strong>Dr. Anirban Sardar</strong><br>CDRI, Lucknow</td>
+            <td class="details">
+              <strong>Dr. Anirban Sardar</strong><br>
+              CDRI, Lucknow
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 3</td>
-            <td class="details"><strong>Dr. Pratibha Gaur</strong><br>SRMIST, Sonepat</td>
+            <td class="details">
+              <strong>Dr. Pratibha Gaur</strong><br>
+              SRMIST, Sonepat
+            </td>
           </tr>
           <tr>
-            <td class="time">-</td>
+            <td class="time"></td>
             <td class="name">Spotlight Talk 4</td>
-            <td class="details"><strong>Dr. Mridula Sahu</strong><br>CIMAP, Lucknow</td>
+            <td class="details">
+              <strong>Dr. Mridula Sahu</strong><br>
+              CIMAP, Lucknow
+            </td>
           </tr>
-          <tr><td class="time">12:00 - 12:30 PM</td><td class="name">Closing Session and Vote of Thanks</td><td class="details">-</td></tr>
-          <tr><td class="time">12:30 - 2:00 PM</td><td class="name">Lunch and Departure</td><td class="details">-</td></tr>
+          <tr>
+            <td class="time">12:00 - 12:30 PM</td>
+            <td class="name">Closing Session and Vote of Thanks</td>
+            <td class="details">-</td>
+          </tr>
+          <tr>
+            <td class="time">12:30 - 2:00 PM</td>
+            <td class="name">Lunch and Departure</td>
+            <td class="details">-</td>
+          </tr>
         </table>
       </div>
     </div>
